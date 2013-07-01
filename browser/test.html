@@ -1,0 +1,26 @@
+<html>
+<head>
+	<title>test</title>
+</head>
+<body>
+	<div style="border: 1px solid red; width: 500px;" id="bad">This
+	is some fucking bad text! It Sucks!</div>
+	<div style="border: 1px solid green; width: 500px;" id="good">This text is really really good, we love this text!</div>
+	<div style="border: 1px solid black; width: 500px;"
+		id="output">Output</div>
+<script src="sentimental_full.js"></script>
+<script>
+window.onload = function() {
+	var op = document.getElementById('output'),
+	bt = document.getElementById('bad'),
+	gt = document.getElementById('good');
+
+	op.innerHTML = JSON.stringify(negativity(bt.innerText));
+	setTimeout(function() {
+		op.innerHTML = JSON.stringify(positivity(gt.innerText));
+	}, 5000);
+}
+</script>
+</body>
+</html>
+
